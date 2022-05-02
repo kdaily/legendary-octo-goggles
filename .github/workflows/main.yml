@@ -16,4 +16,4 @@ jobs:
           days-before-close: 10
           days-before-issue-close: -1
           days-before-issue-stale: -1
-          only-issue-labels: community,response-requested
+          only-pr-labels: community,response-requested
