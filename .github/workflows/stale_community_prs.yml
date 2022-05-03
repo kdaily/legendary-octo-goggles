@@ -1,4 +1,4 @@
-name: 'Close stale community PRs in implementation stage.'
+name: 'Check stale community PRs.'
 on:
   schedule:
     - cron: '*/5 * * * *'
