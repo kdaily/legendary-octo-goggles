@@ -4,7 +4,7 @@ on:
     - cron: '*/5 * * * *'
 
 jobs:
-  stale:
+  stale-implementation-stage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/stale@v4
@@ -17,3 +17,16 @@ jobs:
           days-before-issue-close: -1
           days-before-issue-stale: -1
           only-pr-labels: community,implementation,response-requested
+  stale-review-stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v4
+        with:
+          repo-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          stale-pr-message: 'This PR is stale because it has been 15 days with no activity. Remove stale label or comment or this will be closed in 5 days.'
+          close-pr-message: 'This issue was closed because it has been stalled for 5 days with no activity.'
+          days-before-stale: 15
+          days-before-close: 5
+          days-before-issue-close: -1
+          days-before-issue-stale: -1
+          only-pr-labels: community,review,response-requested
