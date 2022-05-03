@@ -19,7 +19,7 @@ jobs:
           only-issue-labels: community,response-requested
           labels-to-remove-when-unstale: response-requested
           exempt-issue-labels: review,implementation,ready-for-review
-   stale-year-old:
+  stale-year-old:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/stale@v4
