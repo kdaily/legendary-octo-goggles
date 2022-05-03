@@ -10,7 +10,7 @@ jobs:
       - uses: actions/stale@v4
         with:
           repo-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
-          stale-issue-message: 'This issue is stale because it has been 10 days with no activity. Please provide an update via a comment or this will be closed in 5 days.'
+          stale-issue-message: 'This issue is stale because it has been 10 days with no response. Please provide an update via a comment or this will be closed in 5 days.'
           close-issue-message: 'This issue was closed because it has been stalled for 5 days with no activity.'
           days-before-stale: 10
           days-before-close: 5
