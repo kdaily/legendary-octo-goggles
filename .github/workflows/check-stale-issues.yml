@@ -1,24 +1,9 @@
 name: 'Check stale community issues.'
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/30 * * * *'
 
 jobs:
-  stale-response-requested:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/stale@v4
-        with:
-          repo-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
-          stale-issue-message: 'This issue is stale because it has been 1 days with no response. Please provide an update via a comment or this will be closed in 5 days.'
-          close-issue-message: 'This issue was closed because it has been stalled for 5 days with no activity.'
-          days-before-stale: 1
-          days-before-close: 5
-          days-before-pr-close: -1
-          days-before-pr-stale: -1
-          only-issue-labels: community,response-requested
-          labels-to-remove-when-unstale: response-requested
-          exempt-issue-labels: review,implementation,ready-for-review
   stale-year-old:
     runs-on: ubuntu-latest
     steps:
