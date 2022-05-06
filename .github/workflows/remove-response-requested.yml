@@ -1,0 +1,30 @@
+name: Remove Label
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  pr_commented_remove_response_requested:
+    # This job only runs for pull request comments
+    name: Remove response requested on PR comment
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-remove-labels@v1
+        if: ${{ contains(github.event.pull_request.labels.*.name, 'community') && contains( github.event.pull_request.labels.*.name, 'response-requested')}}
+        with:
+          labels: response-requested
+
+  issue_commented_remove_response_requested:
+    # This job only runs for issue comments
+    name: Remove response requested on issue comment
+    if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-remove-labels@v1
+        if: ${{ contains(github.event.issue.labels.*.name, 'community') && contains( github.event.issue.labels.*.name, 'response-requested')}}
+        with:
+          labels: response-requested
