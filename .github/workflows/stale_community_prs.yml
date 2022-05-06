@@ -1,8 +1,5 @@
 name: 'Check stale community PRs.'
-on:
-  pull_request:
-    types:
-      - workflow_dispatch
+on: workflow_dispatch
       
 jobs:
   stale-implementation-stage:
