@@ -5,29 +5,13 @@ on:
     types: [created]
 
 jobs:
-  pr_commented_remove_response_requested:
-    # This job only runs for pull request comments
-    name: Remove response requested on PR comment
-    if: ${{ github.event.issue.pull_request }}
+  commented_remove_response_requested:
+    name: Remove response requested on PR or issue comment
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-remove-labels@v1
-        if: ${{ contains(github.event.issue.labels.*.name, 'response-requested') }}
-        with:
-          github_token: ${{ secrets.ADD_TO_PROJECT_PAT }}
-          fail_on_error: true
-          labels: response-requested
-
-  issue_commented_remove_response_requested:
-    # This job only runs for issue comments
-    name: Remove response requested on issue comment
-    if: ${{ !github.event.issue.pull_request }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-remove-labels@v1
-        if: ${{ contains(github.event.issue.labels.*.name, 'response-requested') }}
+        if: ${{ contains(github.event.issue.labels.*.name, 'community') && contains(github.event.issue.labels.*.name, 'response-requested') }}
         with:
           github_token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           fail_on_error: true
