@@ -7,7 +7,7 @@ jobs:
   stale-year-old:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v4
+      - uses: actions/stale@65d24b70926a596b0f0098d7e1eb572175d73bc1
         with:
           repo-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           stale-issue-message: 'This issue is stale because it has been 365 days with no activity. Please provide an update via a comment or this will be closed in 5 days.'
