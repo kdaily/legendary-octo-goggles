@@ -17,6 +17,7 @@ jobs:
           days-before-pr-close: -1
           days-before-pr-stale: -1
           stale-issue-label: closing-soon
+          stale-pr-label: DONTUSE
           only-issue-labels: community
           labels-to-remove-when-unstale: closing-soon
           exempt-issue-labels: review,implementation,ready-for-review,response-requested
