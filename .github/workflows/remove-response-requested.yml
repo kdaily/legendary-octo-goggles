@@ -1,4 +1,4 @@
-name: Remove Label
+name: Remove response requested and stale labels on new comment
 
 on:
   issue_comment:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   commented_remove_response_requested:
-    name: Remove response requested on PR or issue comment
+    name: Remove response requested and stale on PR or issue comment
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
