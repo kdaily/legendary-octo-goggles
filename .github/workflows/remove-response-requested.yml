@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-remove-labels@v1
-        if: ${{ contains(github.event.pull_request.labels.*.name, 'community') && contains( github.event.pull_request.labels.*.name, 'response-requested')}}
+        if: ${{ contains(github.event.pull_request.labels.*.name, 'response-requested') }}
         with:
           labels: response-requested
 
@@ -25,6 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-remove-labels@v1
-        if: ${{ contains(github.event.issue.labels.*.name, 'community') && contains( github.event.issue.labels.*.name, 'response-requested')}}
+        if: ${{ contains(github.event.issue.labels.*.name, 'response-requested') }}
         with:
           labels: response-requested
