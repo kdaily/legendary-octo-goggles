@@ -1,8 +1,9 @@
 name: 'Check stale community PRs.'
 on:
-  schedule:
-    - cron: '*/5 * * * *'
-
+  pull_request:
+    types:
+      - workflow_dispatch
+      
 jobs:
   stale-implementation-stage:
     runs-on: ubuntu-latest
