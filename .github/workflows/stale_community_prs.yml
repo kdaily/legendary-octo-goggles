@@ -7,7 +7,7 @@ jobs:
   stale-implementation-stage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v4
+      - uses: actions/stale@65d24b70926a596b0f0098d7e1eb572175d73bc1
         with:
           repo-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           stale-pr-message: 'This PR is stale because it has been 20 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
@@ -21,7 +21,7 @@ jobs:
   stale-review-stage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v4
+      - uses: actions/stale@65d24b70926a596b0f0098d7e1eb572175d73bc1
         with:
           repo-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           stale-pr-message: 'This PR is stale because it has been 15 days with no activity. Remove stale label or comment or this will be closed in 5 days.'
