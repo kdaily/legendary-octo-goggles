@@ -15,6 +15,7 @@ jobs:
       - uses: actions-ecosystem/action-remove-labels@v1
         if: ${{ contains(github.event.pull_request.labels.*.name, 'response-requested') }}
         with:
+          github_token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           labels: response-requested
 
   issue_commented_remove_response_requested:
@@ -27,4 +28,5 @@ jobs:
       - uses: actions-ecosystem/action-remove-labels@v1
         if: ${{ contains(github.event.issue.labels.*.name, 'response-requested') }}
         with:
+          github_token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           labels: response-requested
