@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-remove-labels@v1
-        if: ${{ contains(github.event.pull_request.labels.*.name, 'response-requested') }}
+        if: ${{ contains(github.event.issue.labels.*.name, 'response-requested') }}
         with:
           github_token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           fail_on_error: true
