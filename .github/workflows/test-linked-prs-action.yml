@@ -1,0 +1,15 @@
+name: My Workflow
+on:
+  issue:
+    type: comment
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: kdaily/test-linked-issue-action@master
+      with:
+        github_token: {{ secrets.ADD_TO_PROJECT_PAT }}
+        owner: kdaily
+        repo: legendary-octo-goggles
+        number: {{ github.event.issue.number }}
