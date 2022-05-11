@@ -16,6 +16,7 @@ jobs:
           days-before-issue-close: -1
           days-before-issue-stale: -1
           only-pr-labels: community,implementation,response-requested
+          exempt-pr-labels: responded
           labels-to-remove-when-unstale: response-requested
           labels-to-add-when-unstale: responded
   stale-review-stage:
@@ -34,3 +35,5 @@ jobs:
           only-pr-labels: community,review,response-requested
           labels-to-remove-when-unstale: response-requested
           labels-to-add-when-unstale: responded
+          exempt-pr-labels: responded
+
