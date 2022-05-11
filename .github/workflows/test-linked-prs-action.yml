@@ -7,9 +7,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: kdaily/test-linked-issue-action@master
+    - id: get_linked_prs
+      name: Get linked PRs
+      uses: kdaily/test-linked-issue-action@master
       with:
         github_token: ${{ secrets.ADD_TO_PROJECT_PAT }}
         owner: kdaily
         repo: legendary-octo-goggles
         number: ${{ github.event.issue.number }}
+    - id: create_comment
+      name: Create comment
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: ${{ steps.get_linked_prs.outputs.linkedPrs }}
+  
