@@ -19,6 +19,7 @@ jobs:
           exempt-pr-labels: responded
           labels-to-remove-when-unstale: response-requested
           labels-to-add-when-unstale: responded
+          close-pr-label: closed-for-staleness
   stale-review-stage:
     runs-on: ubuntu-latest
     steps:
@@ -36,4 +37,6 @@ jobs:
           labels-to-remove-when-unstale: response-requested
           labels-to-add-when-unstale: responded
           exempt-pr-labels: responded
+          close-pr-label: closed-for-staleness
+
 
