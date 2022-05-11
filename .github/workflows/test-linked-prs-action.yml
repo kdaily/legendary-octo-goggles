@@ -1,7 +1,7 @@
-name: My Workflow
+name: Test linked PR action
 on:
-  issue:
-    type: comment
+  issue_comment:
+    types: [created]
 
 jobs:
   build:
