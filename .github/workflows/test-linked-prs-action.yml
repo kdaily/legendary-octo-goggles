@@ -19,6 +19,7 @@ jobs:
       name: Create comment
       uses: peter-evans/create-or-update-comment@v2
       with:
+        token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+        repository: kdaily/legendary-octo-goggles
         issue-number: ${{ github.event.issue.number }}
         body: ${{ steps.get_linked_prs.outputs.linkedPrs }}
-  
