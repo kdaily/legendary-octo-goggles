@@ -39,9 +39,6 @@ jobs:
           labels-to-add-when-unstale: responded
           exempt-pr-labels: responded,maintainers
           close-pr-label: DONTUSE
-  maintainers-complete-review-stage:
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/stale@65d24b70926a596b0f0098d7e1eb572175d73bc1
         with:
           repo-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
