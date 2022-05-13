@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/stale@65d24b70926a596b0f0098d7e1eb572175d73bc1
         with:
-          debug-only: true
+          debug-only: false
           repo-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           stale-pr-label: stale
           stale-pr-message: 'This pull request is in the implementation stage. It has become stale because it has been 20 days with no activity. Please comment with an update or this will be closed in 10 days.'
